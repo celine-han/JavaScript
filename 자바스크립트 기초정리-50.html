@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 기초정리-50(날짜)</title>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            const today = new Date();
+            $('.year').text(today.getFullYear());
+            $('.month').text(today.getMonth()+1);
+            $('.date').text(today.getDate());
+            $('.day').text(today.getDay()); //0-6 사이의 값 리턴. 0=일, 6=토
+
+            //한글 요일 추출법
+            let dayName = null;
+            switch(today.getDay()){
+                case 0 : dayName = "일";
+                    break;
+
+                case 1 : dayName = "월";
+                    break;
+
+                case 2 : dayName = "화";
+                    break; 
+
+                case 3 : dayName = "수";
+                    break; 
+
+                case 4 : dayName = "목";
+                    break; 
+
+                case 5 : dayName = "금";
+                    break; 
+
+                case 6 : dayName = "토";
+                    break;  
+
+                default : dayName = "공휴";
+            }
+            $('.day').text(dayName);
+
+            //12시간 표기법과 오전/오후를 표기하기
+            let hours = today.getHours();
+
+            if(hours<12){
+                hours = "AM " + hours%12;
+            }else{
+                hours = "PM " + hours%12;
+            }
+
+            $('.hour').text(hours);
+
+            $('.min').text(today.getMinutes());
+
+            $('.sec').text(today.getSeconds());
+
+            
+            setInterval(function(){
+                const current = new Date();
+                //12시간 표기법과 오전/오후를 표기하기
+                let hours = current.getHours();
+
+                if(hours<12){
+                    hours = "AM " + hours%12;
+                }else{
+                    hours = "PM " + hours%12;
+                }
+
+                $('.hour').text(hours);
+
+                $('.min').text(current.getMinutes());
+
+                $('.sec').text(current.getSeconds());
+
+            },1000);
+        });
+     
+    </script>
+</head>
+<body>
+    <h1>날짜 정보 가져오기</h1>
+    <p>
+        올해는 <span class="year">?</span>년
+        <span class="month">?</span>월
+        <span class="date">?</span>일
+        <span class="day">?</span>요일
+    </p>
+    <p>
+        지금 시간은
+        <span class="hour">?</span>시
+        <span class="min">?</span>분
+        <span class="sec">?</span>초
+    </p>
+    
+    <h2>?</h2>
+    <script>
+        let now = new Date();//현시점의 날짜정보를 담은 객체를 리턴
+        /*
+            new Date() 에서 리턴되는 객체는 대락 이럴 것
+            {
+                getFullYear : function(){},
+                getMonth : function(){},
+                getDate : function(){},
+                .
+                .
+                .
+                getTime : function(){}
+            }
+        */
+        $('h2').text(now);
+    </script>
+
+</body>
+</html>
