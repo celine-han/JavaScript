@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-변수에 데이터를 저장하고 출력하기</title>
+ 
+</head>
+<body>
+    <h1>변수에 대하여</h1>
+    
+    <button id="conf_1">출력1</button>
+
+    <h2>변수를 왜 사용할까요?</h2>
+    <p>한번이 아니라 여러번 재사용하기 위해서.</p>
+
+    <hr />
+
+    <h2>변수명을 정하는 좋은 습관</h2>
+    <ol>
+        <li>영문 소문자로, 띄어쓰기 없이(대소문자 구별)</li>
+        <li>의미있는 짧은 영단어를 선택</li>
+        <li>
+            변수에 담길 값을 설명하는 변수명으로 정하면, 
+            저장된 데이터가 무엇인지 예측할 수 있어
+            손쉽게 코드를 해석할 수 있다.
+        </li>
+        <li>두 단어 이상일 경우, _(언더바) 또는 낙타 표기법으로 작성을 권장.</li>
+        <li>숫자로 시작하지 못한다.</li>
+    </ol>
+
+    <button id="conf_2">출력2</button>
+
+    <script>
+        const $conf_2 = document.getElementById("conf_2");
+
+        $conf_2.addEventListener('click', function(){
+            //플러스(+) 연산자의 특성
+            console.log(33+33); //산술연산자로 작동.
+            console.log('33'+66); //연결연산자로 작동.
+            console.log('삼삼'+'오오'); //연결연산자로 작동.
+        });
+
+        //할당의 법칙
+        var my_buscard = 1000; //변수에 상수를 할당.
+        var her_buscard = my_buscard; //변수에 변수값을 할당.
+
+
+        /*
+            학습과제 : 변수 10개를 선언하고, 
+            값(숫자, 문자열 섞어서)을 할당후
+            콘솔창에 아래와 같은 형식으로 출력하는 코드를 작성하세요.
+
+            형식) 변수명 = 값;
+
+            ex) pocket = 100 (이런식으로 출력)
+            
+        */
+        var alio_olio = 12000;
+        console.log("aloi olio = " , alio_olio);
+
+        var meat_ball = 15000;
+        console.log("meat ball = " , meat_ball);
+
+        var tomato_shrimp = 14000;
+        console.log("tomato shrimp = " , tomato_shrimp);
+
+        var cream_risotto = 13000;
+        console.log("cream risotto = " , cream_risotto);
+
+        var panet = 16000;
+        console.log("panet = " , panet);
+
+        var salad = '제철 채소 가격에 따라서';
+        console.log("salad = ", salad);
+
+        var wine_glass = 7000;
+        console.log("glass wine = " , wine_glass);
+
+        var wine_bottle1 = '시가';
+        console.log("wine one bottle = " , wine_bottle1);
+
+        var sparkling_water = 3000;
+        console.log("sparkilng water = " , sparkling_water);
+
+        var ade = 6000;
+        console.log("ade = ", ade)
+
+        
+    </script>
+    <script>
+        //이벤트 구문 작성 : DOM셀렉팅.addEventListener('이벤트명', 이벤트핸들러);
+        document.getElementById("conf_1").addEventListener('click', function(){
+            alert("버튼을 클릭했습니다.");
+        });
+    </script>
+</body>
+</html>
